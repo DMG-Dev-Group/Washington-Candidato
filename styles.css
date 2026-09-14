@@ -299,60 +299,161 @@ nav a:hover {
   max-width:600px;
   color:#ffffffd5
 }
-.proposal {
+.proposals {
+  width:min(1120px,88vw);
+  margin:0 auto;
+  padding:92px 0 110px;
   display:grid;
-  grid-template-columns:1.15fr .85fr;
-  border-bottom:1px solid var(--line);
-  min-height:360px
+  grid-template-columns:200px minmax(0,650px);
+  justify-content:center;
+  gap:56px;
+  align-items:start
 }
-.proposal-text {
-  padding:56px max(6vw,calc((100vw - 1120px)/2)) 56px max(6vw,calc((100vw - 1120px)/2));
-  padding-right:45px;
-  background:#fff
+.proposal-index {
+  position:sticky;
+  top:max(84px,calc(50vh - 170px))
 }
-.proposal-text h2 {
-  font:600 25px Archivo;
-  margin:12px 0
+.proposal-index .kicker {
+  margin-bottom:14px;
+  color:#727a74
 }
-.proposal-text p {
-  line-height:1.65;
-  color:#4a5450
+.proposal-index a {
+  display:block;
+  padding:11px 10px;
+  border-left:2px solid #dfdfd8;
+  font-size:10px;
+  font-weight:700;
+  line-height:1.25;
+  color:#5d665f
 }
-.proposal-text li {
-  margin:10px 0;
-  font-size:14px;
+.proposal-index a b {
+  color:#c9a300;
+  margin-right:8px
+}
+.proposal-index a:hover,.proposal-index a.active {
+  border-left-color:var(--green);
+  background:#edf3ed;
+  color:var(--ink)
+}
+.proposals:has(.proposal:target) .proposal-index a.active {
+  border-left-color:#dfdfd8;
+  background:transparent;
+  color:#5d665f
+}
+.proposals:has(#proposta-01:target) .proposal-index a[href="#proposta-01"],
+.proposals:has(#proposta-02:target) .proposal-index a[href="#proposta-02"],
+.proposals:has(#proposta-03:target) .proposal-index a[href="#proposta-03"],
+.proposals:has(#proposta-04:target) .proposal-index a[href="#proposta-04"],
+.proposals:has(#proposta-05:target) .proposal-index a[href="#proposta-05"],
+.proposals:has(#proposta-06:target) .proposal-index a[href="#proposta-06"] {
+  border-left-color:var(--green);
+  background:#edf3ed;
+  color:var(--ink)
+}
+.proposal-index p {
+  margin:24px 0 0;
+  padding-top:14px;
+  border-top:1px solid var(--line);
+  color:#7d857f;
+  font-size:10px;
   line-height:1.5
 }
+.proposals-list {
+  display:grid;
+  width:100%;
+  gap:100px
+}
+.proposal {
+  display:flex;
+  flex-direction:column;
+  gap:28px;
+  scroll-margin-top:105px
+}
+.proposal-text {
+  background:transparent
+}
+.proposal .number {
+  display:inline-block;
+  margin-right:10px;
+  font:800 italic 70px/.75 'Barlow Condensed';
+  color:#dfddd5;
+  vertical-align:middle
+}
+.proposal-text h2 {
+  display:inline;
+  font:800 italic 45px/.9 'Barlow Condensed';
+  vertical-align:middle
+}
+.proposal-text p {
+  max-width:550px;
+  margin:25px 0 20px;
+  color:var(--green);
+  font-size:18px;
+  font-weight:600;
+  line-height:1.5
+}
+.proposal-text ul {
+  margin:0;
+  padding:16px 0 0;
+  list-style:none;
+  border-top:2px solid var(--ink)
+}
+.proposal-text ul:before {
+  content:'O QUE VOU FAZER';
+  display:block;
+  margin-bottom:4px;
+  color:var(--green);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.2em
+}
+.proposal-text li {
+  position:relative;
+  margin:0;
+  padding:17px 0 17px 84px;
+  border-bottom:1px solid var(--line);
+  font-size:15px;
+  line-height:1.55
+}
+.proposal-text li:before {
+  content:'ATUAR';
+  position:absolute;
+  left:0;
+  top:19px;
+  color:#737a74;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.1em
+}
 .proposal-photo {
-  min-height:300px;
+  order:2;
+  height:205px;
   background:#0a2415;
   position:relative;
   overflow:hidden
 }
+.proposal-text { order:1 }
 .proposal-photo img {
   width:100%;
   height:100%;
   object-fit:cover;
-  position:absolute
+  object-position:center;
+  display:block
 }
-.proposal-photo img[src$="rua.jpg"] {
-  object-position:center 22%
-}
-.proposal-photo img[src$="estudio-1.jpg"] {
-  object-position:center 18%
-}
-.proposal-photo img[src$="institucional.jpg"] {
-  object-position:center 34%
-}
-.proposal-photo img[src$="lencois.jpg"] {
-  object-position:center
+.proposal-photo:after {
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(0deg,rgba(4,18,10,.55),transparent 48%);
+  pointer-events:none
 }
 .proposal-photo .photo-number {
-  font:800 italic 120px 'Barlow Condensed';
-  color:#f6c51b33;
+  font:800 italic 94px 'Barlow Condensed';
+  color:#f6c51b66;
   position:absolute;
-  right:26px;
-  top:16px
+  z-index:1;
+  right:20px;
+  top:12px
 }
 .support {
   padding:95px 0;
@@ -552,14 +653,39 @@ nav a:hover {
   .cta .button {
     margin-top:25px
   }
-  .proposal {
-    grid-template-columns:1fr
+  .proposals {
+    display:block;
+    padding:60px 0 72px
   }
-  .proposal-text {
-    padding:45px 6vw
+  .proposal-index {
+    display:none
+  }
+  .proposals-list {
+    gap:72px
+  }
+  .proposal {
+    gap:22px
+  }
+  .proposal .number {
+    font-size:56px
+  }
+  .proposal-text h2 {
+    font-size:36px
+  }
+  .proposal-text p {
+    margin:20px 0 16px;
+    font-size:16px
+  }
+  .proposal-text li {
+    padding:14px 0 14px 68px;
+    font-size:14px
+  }
+  .proposal-text li:before {
+    top:16px;
+    font-size:9px
   }
   .proposal-photo {
-    min-height:250px
+    height:150px
   }
   .support {
     padding:65px 0

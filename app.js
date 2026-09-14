@@ -127,6 +127,61 @@ function setupPixDonation() {
 
 setupPixDonation();
 
+function setupProposalSelector() {
+  const proposals = document.querySelector('.proposals');
+  if (!proposals) return;
+
+  const links = [...proposals.querySelectorAll('.proposal-index a[href^="#proposta-"]')];
+  const panels = [...proposals.querySelectorAll('.proposal[id^="proposta-"]')];
+  if (!links.length || !panels.length) return;
+
+  function activate(id) {
+    const panel = panels.find((item) => item.id === id) || panels[0];
+    links.forEach((link) => {
+      const isActive = link.getAttribute('href') === `#${panel.id}`;
+      link.classList.toggle('active', isActive);
+      if (isActive) link.setAttribute('aria-current', 'true');
+      else link.removeAttribute('aria-current');
+    });
+  }
+
+  const selectedId = links.some((link) => link.getAttribute('href') === window.location.hash)
+    ? window.location.hash.slice(1)
+    : panels[0].id;
+  activate(selectedId);
+
+  links.forEach((link) => {
+    link.addEventListener('click', () => {
+      const id = link.getAttribute('href').slice(1);
+      activate(id);
+    });
+  });
+
+  let frame;
+  function updateActiveProposal() {
+    cancelAnimationFrame(frame);
+    frame = requestAnimationFrame(() => {
+      const viewportCenter = window.innerHeight / 2;
+      const current = panels.reduce((closest, panel) => {
+        const bounds = panel.getBoundingClientRect();
+        const distance = Math.abs((bounds.top + bounds.bottom) / 2 - viewportCenter);
+        return distance < closest.distance ? { panel, distance } : closest;
+      }, { panel: panels[0], distance: Infinity });
+      activate(current.panel.id);
+    });
+  }
+
+  window.addEventListener('scroll', updateActiveProposal, { passive: true });
+  window.addEventListener('resize', updateActiveProposal);
+  window.addEventListener('hashchange', () => {
+    const id = window.location.hash.slice(1);
+    if (panels.some((panel) => panel.id === id)) activate(id);
+  });
+  updateActiveProposal();
+}
+
+setupProposalSelector();
+
 document.querySelectorAll('[data-whatsapp-channel]').forEach((button) => {
   button.addEventListener('click', () => {
     if (!campaignConfig.whatsappChannelUrl) {
