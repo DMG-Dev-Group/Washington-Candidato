@@ -9,5 +9,5 @@ window.CAMPAIGN_CONFIG = {
   pixReceiverName: 'WASHINGTON LUIS CAMPOS RIO BRANCO',
   pixCity: 'SAO LUIS',
   pixTransactionId: 'CAMPANHA4343',
-  whatsappChannelUrl: 'https://whatsapp.com/channel/0029VbFcSMaAYlUB3cUDvn20',
+  whatsappChannelUrl: 'https://whatsapp.com/channel/0029Vb95dq2Fsn0ZimkAQ439',
 };
