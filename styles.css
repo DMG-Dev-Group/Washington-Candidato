@@ -480,6 +480,21 @@ nav a:hover {
   background:var(--green);
   color:#fff;
 }
+.pix-key-copy {
+  width:100%;
+  margin-top:10px;
+  padding:11px;
+  border:1px solid #aebbb0;
+  background:transparent;
+  color:#08301a;
+  font:700 11px Archivo,Arial,sans-serif;
+  letter-spacing:.08em;
+  cursor:pointer;
+}
+.pix-key-copy:hover {
+  border-color:var(--green);
+  color:var(--green);
+}
 .pix-qr-wrap {
   display:grid;
   place-items:center;

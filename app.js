@@ -110,6 +110,18 @@ function setupPixDonation() {
     }
   });
 
+  const copyKeyButton = pixCard.querySelector('[data-copy-pix-key]');
+  if (copyKeyButton) {
+    copyKeyButton.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(campaignConfig.pixKey);
+        showMessage(pixCard, 'Chave Pix copiada! No aplicativo do banco, escolha pagar por chave e informe o valor desejado.');
+      } catch (error) {
+        showMessage(pixCard, `Use esta chave Pix: ${campaignConfig.pixKey}`, true);
+      }
+    });
+  }
+
   updatePix(selectedAmount);
 }
 

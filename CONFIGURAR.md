@@ -13,7 +13,7 @@ pixCity: 'SAO LUIS',
 pixTransactionId: 'CAMPANHA4343',
 ```
 
-O site não guarda dados pessoais ou bancários de quem doa. O QR Code depende de uma pequena biblioteca pública carregada ao abrir a página; se ela não carregar, a pessoa ainda pode usar o botão **Copiar Pix Copia e Cola**.
+O site não guarda dados pessoais ou bancários de quem doa. O gerador de QR Code está incluído dentro da própria pasta do site (`qrcode.min.js`), portanto não depende mais de um serviço externo para funcionar. A página também tem um botão para copiar somente a chave Pix, caso a pessoa queira informar o valor diretamente no aplicativo do banco.
 
 ## Voluntariado pelo canal de WhatsApp
 
