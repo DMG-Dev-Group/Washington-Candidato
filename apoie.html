@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Apoie · Washington 4343</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <div class="wrap nav">
+        <a class="brand" href="index.html">
+          <img src="assets/selo-circular.png" alt="Washington 4343">
+          <span>WASHINGTON <strong>4343</strong>
+          </span>
+        </a>
+        <nav>
+          <a href="propostas.html">PROPOSTAS</a>
+          <a href="index.html#trajetoria">TRAJETÓRIA</a>
+          <a href="apoie.html">APOIE</a>
+        </nav>
+        <a class="button" href="voluntarie-se.html">SEJA VOLUNTÁRIO</a>
+      </div>
+    </header>
+    <main>
+      <section class="support wrap">
+        <div>
+          <div class="kicker kicker-green">APOIE A CAMPANHA</div>
+          <h1>UMA CAMPANHA FEITA DE MUITAS MÃOS.</h1>
+          <p>Escolha um valor e faça sua doação direto pelo Pix oficial da campanha.</p>
+          <p>O QR Code é gerado para o valor escolhido. Você também pode copiar o código Pix e pagar pelo aplicativo do seu banco.</p>
+          <img class="support-photo" src="assets/retrato.png" alt="Washington Rio Branco">
+        </div>
+        <section class="form pix-card" aria-labelledby="pix-title">
+          <h2 id="pix-title">DOE VIA PIX</h2>
+          <p class="pix-owner">
+            <strong>Chave Pix:</strong> 68.504.058/0001-06<br>
+            <strong>Titular:</strong> Washington Luis Campos Rio Branco</p>
+            <div class="pix-options" aria-label="Escolha um valor para doar">
+              <button class="pix-value active" type="button" data-pix-amount="20">R$ 20</button>
+              <button class="pix-value" type="button" data-pix-amount="50">R$ 50</button>
+              <button class="pix-value" type="button" data-pix-amount="100">R$ 100</button>
+            </div>
+            <label for="pix-custom-value">OUTRO VALOR</label>
+            <input id="pix-custom-value" type="number" min="1" step="0.01" inputmode="decimal" placeholder="Ex.: 35,00">
+            <div class="pix-qr-wrap">
+              <div id="pix-qr" aria-label="QR Code Pix">
+              </div>
+            </div>
+            <button class="button pix-copy" type="button" data-copy-pix>COPIAR PIX COPIA E COLA</button>
+            <p class="notice">Doação direta para a campanha. Confira o nome do titular no app do seu banco antes de confirmar.</p>
+            <p class="success" aria-live="polite">
+            </p>
+          </section>
+        </section>
+        <section class="quote">
+          <div class="wrap">
+            <div class="kicker kicker-dark">SEU APOIO CONTA</div>
+            <h2>“CADA CONTRIBUIÇÃO AJUDA A CAMPANHA A CHEGAR MAIS LONGE.”</h2>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="wrap">
+          <span>WASHINGTON RIO BRANCO · 4343</span>
+          <span>PV · FEDERAÇÃO BRASIL DA ESPERANÇA</span>
+        </div>
+      </footer>
+      <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js">
+      </script>
+      <script src="config.js">
+      </script>
+      <script src="app.js">
+      </script>
+    </body>
+  </html>

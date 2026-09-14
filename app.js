@@ -1,0 +1,128 @@
+const campaignConfig = window.CAMPAIGN_CONFIG || {};
+
+function showMessage(form, message, isError = false) {
+  const messageBox = form.querySelector('.success');
+  messageBox.textContent = message;
+  messageBox.classList.toggle('error', isError);
+  messageBox.style.display = 'block';
+  messageBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function pixField(id, value) {
+  const content = String(value);
+  return `${id}${String(content.length).padStart(2, '0')}${content}`;
+}
+
+function crc16(payload) {
+  let crc = 0xffff;
+  for (let index = 0; index < payload.length; index += 1) {
+    crc ^= payload.charCodeAt(index) << 8;
+    for (let bit = 0; bit < 8; bit += 1) {
+      crc = (crc & 0x8000) ? (crc << 1) ^ 0x1021 : crc << 1;
+      crc &= 0xffff;
+    }
+  }
+  return crc.toString(16).toUpperCase().padStart(4, '0');
+}
+
+function removeAccents(value) {
+  return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
+function createPixPayload(amount) {
+  const pixKey = String(campaignConfig.pixKey || '').replace(/\D/g, '');
+  const name = removeAccents(campaignConfig.pixReceiverName || 'CAMPANHA')
+    .toUpperCase()
+    .slice(0, 25);
+  const city = removeAccents(campaignConfig.pixCity || 'SAO LUIS')
+    .toUpperCase()
+    .slice(0, 15);
+  const transactionId = String(campaignConfig.pixTransactionId || '***').slice(0, 25);
+  const merchantAccount = pixField('00', 'br.gov.bcb.pix') + pixField('01', pixKey);
+  const additionalData = pixField('05', transactionId);
+  const basePayload = [
+    pixField('00', '01'),
+    pixField('26', merchantAccount),
+    pixField('52', '0000'),
+    pixField('53', '986'),
+    pixField('54', Number(amount).toFixed(2)),
+    pixField('58', 'BR'),
+    pixField('59', name),
+    pixField('60', city),
+    pixField('62', additionalData),
+    '6304',
+  ].join('');
+
+  return `${basePayload}${crc16(basePayload)}`;
+}
+
+function setupPixDonation() {
+  const pixCard = document.querySelector('.pix-card');
+  if (!pixCard || !campaignConfig.pixKey) return;
+
+  const qrContainer = pixCard.querySelector('#pix-qr');
+  const customValue = pixCard.querySelector('#pix-custom-value');
+  let selectedAmount = 20;
+  let pixPayload = '';
+
+  function updatePix(amount) {
+    const parsedAmount = Number(amount);
+    if (!parsedAmount || parsedAmount <= 0) return;
+    selectedAmount = parsedAmount;
+    pixPayload = createPixPayload(selectedAmount);
+    qrContainer.replaceChildren();
+
+    if (window.QRCode) {
+      new window.QRCode(qrContainer, {
+        text: pixPayload,
+        width: 190,
+        height: 190,
+        colorDark: '#08301a',
+        colorLight: '#ffffff',
+        correctLevel: window.QRCode.CorrectLevel.M,
+      });
+    } else {
+      qrContainer.textContent = 'QR Code indisponível. Use o botão para copiar o código Pix.';
+    }
+  }
+
+  pixCard.querySelectorAll('[data-pix-amount]').forEach((button) => {
+    button.addEventListener('click', () => {
+      pixCard.querySelectorAll('[data-pix-amount]').forEach((item) => item.classList.remove('active'));
+      button.classList.add('active');
+      customValue.value = '';
+      updatePix(button.dataset.pixAmount);
+    });
+  });
+
+  customValue.addEventListener('change', () => {
+    if (!customValue.value) return;
+    pixCard.querySelectorAll('[data-pix-amount]').forEach((item) => item.classList.remove('active'));
+    updatePix(customValue.value.replace(',', '.'));
+  });
+
+  pixCard.querySelector('[data-copy-pix]').addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(pixPayload);
+      showMessage(pixCard, `Código Pix de R$ ${selectedAmount.toFixed(2).replace('.', ',')} copiado! Abra o app do seu banco e cole para pagar.`);
+    } catch (error) {
+      showMessage(pixCard, 'Não foi possível copiar automaticamente. Leia o QR Code pelo app do seu banco.', true);
+    }
+  });
+
+  updatePix(selectedAmount);
+}
+
+setupPixDonation();
+
+document.querySelectorAll('[data-whatsapp-channel]').forEach((button) => {
+  button.addEventListener('click', () => {
+    if (!campaignConfig.whatsappChannelUrl) {
+      const card = button.closest('.form');
+      showMessage(card, 'O link do canal ainda não foi configurado. Veja o arquivo CONFIGURAR.md.', true);
+      return;
+    }
+
+    window.location.assign(campaignConfig.whatsappChannelUrl);
+  });
+});
