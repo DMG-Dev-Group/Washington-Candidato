@@ -744,7 +744,7 @@ nav a:hover {
   position: relative;
   max-width: 1240px;
   margin: 0 auto;
-  padding: clamp(56px, 9vw, 128px) 6vw clamp(48px, 7vw, 96px);
+  padding: clamp(18px, 2.8vw, 40px) 6vw clamp(42px, 7vw, 76px);
   min-height: min(84vh, 1000px);
   display: flex;
   flex-direction: column;
@@ -964,10 +964,16 @@ nav a:hover {
 }
 .home-section-heading h2 {
   max-width: 340px;
-  margin: 22px 0 28px;
+  margin: 0 0 20px;
   color: #fff;
-  font-size: clamp(60px, 4.8vw, 78px);
-  word-spacing: 0.04em;
+  font-family: "Barlow Condensed", Arial, sans-serif;
+  font-style: italic;
+  font-weight: 800;
+  font-size: clamp(36px, 4.6vw, 70px);
+  line-height: 0.94;
+  letter-spacing: 0;
+  word-spacing: 0;
+  text-transform: none;
 }
 .home-works .kicker {
   color: var(--gold);
@@ -1212,7 +1218,7 @@ nav a:hover {
 @media (max-width: 760px) {
   .home-hero {
     min-height: 640px;
-    padding: 65px 0;
+    padding: 65px 65px 0 0;
   }
   .home-hero h1 {
     font-size: clamp(63px, 17vw, 90px);
