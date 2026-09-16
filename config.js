@@ -10,4 +10,8 @@ window.CAMPAIGN_CONFIG = {
   pixCity: 'SAO LUIS',
   pixTransactionId: 'CAMPANHA4343',
   whatsappChannelUrl: 'https://whatsapp.com/channel/0029Vb95dq2Fsn0ZimkAQ439',
+  // Link oficial "Doe Aqui" da Justiça Eleitoral. Só existe depois do registro
+  // da candidatura no sistema do TSE. Enquanto estiver vazio, o bloco do canal
+  // oficial em apoie.html continua comentado e fora da página.
+  tseDonationUrl: '',
 };

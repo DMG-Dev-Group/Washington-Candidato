@@ -1,0 +1,292 @@
+/* Apoie — doação transparente e fiscalizada */
+.apoio-hero {
+  background: var(--green);
+  color: #fff;
+  padding: clamp(56px, 8vw, 96px) 0 0;
+}
+.apoio-hero-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: clamp(36px, 5vw, 56px);
+}
+.apoio-hero h1 {
+  font-size: clamp(42px, 6.4vw, 84px);
+}
+.apoio-hero h1 span {
+  color: var(--gold);
+}
+.apoio-hero p {
+  margin: 0;
+  max-width: 56ch;
+  font-size: clamp(15px, 1.15vw, 17px);
+  line-height: 1.6;
+  color: #ffffffd6;
+}
+.apoio-band {
+  border-top: 1px solid #ffffff24;
+  background: #0f5f30;
+}
+.apoio-band .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+  align-items: center;
+  padding: 14px 0;
+}
+.apoio-band span {
+  font: 700 10px/1 Archivo, Arial, sans-serif;
+  letter-spacing: 0.2em;
+  color: #ffffff80;
+}
+
+.apoio-grid {
+  width: min(1120px, 88vw);
+  margin: 0 auto;
+  padding: clamp(48px, 6vw, 88px) 0;
+  display: grid;
+  grid-template-columns: minmax(0, 460px) minmax(0, 1fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: start;
+}
+
+/* Escolha do valor */
+.value-picker-kicker {
+  margin-bottom: 12px;
+}
+.apoio-grid h2 {
+  font-size: clamp(28px, 3vw, 40px);
+  margin-bottom: 18px;
+}
+.value-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.value-option {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 12px 6px;
+  border: 1px solid #b7c4b9;
+  background: #fff;
+  color: #08301a;
+  font: 700 15px Archivo, Arial, sans-serif;
+  cursor: pointer;
+  text-align: center;
+}
+.value-option small {
+  font: 600 9px/1 Archivo, Arial, sans-serif;
+  letter-spacing: 0.06em;
+  color: #6b746e;
+}
+.value-option:hover,
+.value-option.active {
+  border-color: var(--green);
+  background: var(--green);
+  color: #fff;
+}
+.value-option.active small {
+  color: #ffffffb3;
+}
+.value-other {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin-top: 8px;
+  padding: 12px 6px;
+  border: 1px dashed #b7c4b9;
+  background: #fff;
+  color: #08301a;
+  font: 700 13px Archivo, Arial, sans-serif;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.value-other small {
+  font: 600 9px/1 Archivo, Arial, sans-serif;
+  letter-spacing: 0.06em;
+  color: #6b746e;
+}
+.value-other:hover,
+.value-other.active {
+  border-style: solid;
+  border-color: var(--green);
+  background: var(--green);
+  color: #fff;
+}
+.value-other.active small {
+  color: #ffffffb3;
+}
+.value-input-wrap {
+  grid-column: 1 / -1;
+  margin-top: 10px;
+}
+.value-input-wrap[hidden] {
+  display: none;
+}
+.value-input-wrap label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 7px;
+}
+.value-input-wrap input {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #c9cec8;
+  background: #fafaf8;
+  font: 14px Archivo, Arial, sans-serif;
+}
+.value-note {
+  grid-column: 1 / -1;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 2px solid var(--ink);
+}
+.value-note .kicker {
+  color: #c9a300;
+  margin-bottom: 8px;
+}
+.value-note p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--ink);
+}
+.value-note small {
+  display: block;
+  margin-top: 8px;
+  font-size: 11px;
+  color: #8a928c;
+  line-height: 1.5;
+}
+
+.pix-panel {
+  margin-top: 24px;
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 28px;
+}
+.pix-panel h3 {
+  font-size: 26px;
+  margin-bottom: 6px;
+}
+.pix-panel .pix-copy {
+  display: flex;
+  width: fit-content;
+  margin: 22px auto 0;
+}
+
+/* Quem não pode doar */
+.apoio-legal-intro {
+  margin: 0 0 20px;
+  max-width: 54ch;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #4a5450;
+}
+.legal-list {
+  margin: 0;
+  padding: 16px 0 0;
+  list-style: none;
+  border-top: 2px solid var(--ink);
+}
+.legal-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #3f4842;
+}
+.legal-list li:before {
+  content: "";
+  flex: none;
+  width: 6px;
+  height: 6px;
+  background: #8a2b1f;
+}
+.legal-limit {
+  margin-top: 20px;
+  padding: 18px;
+  border: 1px solid #b9d6c2;
+  background: #eef7f0;
+}
+.legal-limit .kicker {
+  color: var(--green);
+  margin-bottom: 8px;
+}
+.legal-limit p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #204430;
+}
+
+/* Alternativa sem dinheiro */
+.apoio-alt {
+  position: relative;
+  padding: clamp(64px, 9vw, 130px) 0;
+  background: linear-gradient(90deg, rgba(4, 18, 10, 0.92), rgba(4, 18, 10, 0.55) 60%, rgba(4, 18, 10, 0.3)), url("assets/rua - Copia.jpg") center/cover;
+  color: #fff;
+}
+.apoio-alt .wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  max-width: 640px;
+}
+.apoio-alt h2 {
+  font-size: clamp(34px, 4.6vw, 56px);
+}
+.apoio-alt p {
+  margin: 0;
+  font-size: clamp(15px, 1.15vw, 17px);
+  line-height: 1.6;
+  color: #ffffffd0;
+}
+.apoio-alt-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+[data-reveal] {
+  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+[data-reveal]:not(.is-visible) {
+  opacity: 0;
+  transform: translate3d(0, 26px, 0);
+}
+
+@media (max-width: 760px) {
+  .apoio-grid {
+    grid-template-columns: 1fr;
+    padding: 48px 0;
+    gap: 48px;
+  }
+  .value-options {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .apoio-alt {
+    background: linear-gradient(180deg, rgba(4, 18, 10, 0.55), rgba(4, 18, 10, 0.92) 65%), url("assets/rua - Copia.jpg") center/cover;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
