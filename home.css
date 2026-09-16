@@ -20,6 +20,12 @@
   justify-content: flex-end;
   gap: 26px;
 }
+
+.home-hero .kicker {
+  font-size: 40px;
+  letter-spacing: 1px;
+}
+
 .home-hero h1 {
   margin: 0;
   font-size: clamp(72px, 9.5vw, 136px);

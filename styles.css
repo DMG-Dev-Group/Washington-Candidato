@@ -532,6 +532,52 @@ nav a:hover {
   color: #fff;
   padding: 90px 0;
 }
+.volunteer-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.volunteer-page main {
+  flex: 1;
+  display: flex;
+}
+.volunteer-page .join {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.volunteer-page .join-grid {
+  width: min(1180px, 88vw);
+  gap: clamp(48px, 6vw, 88px);
+  align-items: center;
+}
+.volunteer-page .join h1 {
+  font-size: clamp(58px, 6vw, 86px);
+}
+.volunteer-page .whatsapp-card {
+  background: #0b2e19;
+  border: 1px solid #2a7046;
+  color: #fff;
+  padding: 32px;
+}
+.volunteer-page .whatsapp-card h2 {
+  color: #fff;
+  margin-top: 10px;
+}
+.volunteer-page .whatsapp-card p {
+  color: #ffffffc7;
+}
+.volunteer-page .whatsapp-card .notice {
+  color: #ffffffa8 !important;
+}
+.whatsapp-brand {
+  width: 48px;
+  height: 48px;
+  display: block;
+  margin-bottom: 12px;
+  border-radius: 50%;
+  object-fit: cover;
+}
 .join-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -715,6 +761,15 @@ nav a:hover {
   }
   .support h1,
   .join h1 {
+    font-size: 60px;
+  }
+  .volunteer-page .join {
+    padding: 70px 0;
+  }
+  .volunteer-page .join-grid {
+    width: min(100% - 40px, 520px);
+  }
+  .volunteer-page .join h1 {
     font-size: 60px;
   }
   .page-hero {
