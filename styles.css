@@ -532,6 +532,38 @@ nav a:hover {
   color: #fff;
   padding: 90px 0;
 }
+.volunteer-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.volunteer-page main {
+  flex: 1;
+  display: flex;
+}
+.volunteer-page .join {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.volunteer-page .join-grid {
+  width: min(1120px, 88vw);
+}
+.volunteer-page .whatsapp-card {
+  background: #0b2e19;
+  border-color: #1d6b3d;
+  color: #fff;
+}
+.volunteer-page .whatsapp-card .notice {
+  color: #ffffffb8 !important;
+}
+.whatsapp-brand {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+}
 .join-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
