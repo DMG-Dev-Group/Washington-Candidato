@@ -1,5 +1,20 @@
 const campaignConfig = window.CAMPAIGN_CONFIG || {};
 
+(() => {
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('[data-reveal]').forEach((element) => {
+    if (reducedMotion) return;
+    const observer = new IntersectionObserver((entries, currentObserver) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        currentObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.12 });
+    observer.observe(element);
+  });
+})();
+
 function showMessage(form, message, isError = false) {
   const messageBox = form.querySelector('.success');
   messageBox.textContent = message;
