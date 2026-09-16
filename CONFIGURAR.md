@@ -15,6 +15,21 @@ pixTransactionId: 'CAMPANHA4343',
 
 O site não guarda dados pessoais ou bancários de quem doa. O gerador de QR Code está incluído dentro da própria pasta do site (`qrcode.min.js`), portanto não depende mais de um serviço externo para funcionar. A página também tem um botão para copiar somente a chave Pix, caso a pessoa queira informar o valor diretamente no aplicativo do banco.
 
+## Canal oficial de doação do TSE (pendente)
+
+A página `/apoie` foi redesenhada para deixar claro que, assim que a candidatura for
+registrada, a doação passa a acontecer pelo canal oficial da Justiça Eleitoral
+("Doe Aqui"), não por Pix direto no site. Esse bloco já está pronto no HTML de
+`apoie.html`, mas fica **comentado e fora da página** até existir o link real —
+procure pelo comentário `Canal oficial do TSE — pendente`.
+
+Quando a candidatura estiver registrada e o TSE liberar o link do "Doe Aqui":
+
+1. Preencha `tseDonationUrl` em `config.js` com a URL oficial.
+2. Descomente o bloco `.tse-panel` em `apoie.html`.
+3. Decida com a campanha se o painel de Pix continua como alternativa (ele foi
+   mantido de propósito) ou se sai de cena.
+
 ## Voluntariado pelo canal de WhatsApp
 
 1. No WhatsApp, abra o canal da campanha e toque no nome dele.

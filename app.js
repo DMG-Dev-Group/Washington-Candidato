@@ -76,8 +76,9 @@ function setupPixDonation() {
   if (!pixCard || !campaignConfig.pixKey) return;
 
   const qrContainer = pixCard.querySelector('#pix-qr');
-  const customValue = pixCard.querySelector('#pix-custom-value');
-  let selectedAmount = 20;
+  const customValue = document.querySelector('#pix-custom-value');
+  const activeAmountButton = document.querySelector('[data-pix-amount].active');
+  let selectedAmount = Number(activeAmountButton?.dataset.pixAmount) || 20;
   let pixPayload = '';
 
   function updatePix(amount) {
@@ -101,9 +102,9 @@ function setupPixDonation() {
     }
   }
 
-  pixCard.querySelectorAll('[data-pix-amount]').forEach((button) => {
+  document.querySelectorAll('[data-pix-amount]').forEach((button) => {
     button.addEventListener('click', () => {
-      pixCard.querySelectorAll('[data-pix-amount]').forEach((item) => item.classList.remove('active'));
+      document.querySelectorAll('[data-pix-amount]').forEach((item) => item.classList.remove('active'));
       button.classList.add('active');
       customValue.value = '';
       updatePix(button.dataset.pixAmount);
@@ -112,8 +113,8 @@ function setupPixDonation() {
 
   customValue.addEventListener('change', () => {
     if (!customValue.value) return;
-    pixCard.querySelectorAll('[data-pix-amount]').forEach((item) => item.classList.remove('active'));
-    updatePix(customValue.value.replace(',', '.'));
+    document.querySelectorAll('[data-pix-amount]').forEach((item) => item.classList.remove('active'));
+    updatePix(customValue.value.replace(/\./g, '').replace(',', '.'));
   });
 
   pixCard.querySelector('[data-copy-pix]').addEventListener('click', async () => {

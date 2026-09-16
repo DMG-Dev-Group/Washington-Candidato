@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Apoie · Washington 4343</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="apoie.css">
   </head>
   <body>
     <header>
@@ -23,55 +24,139 @@
       </div>
     </header>
     <main>
-      <section class="support wrap">
-        <div data-reveal>
+      <section class="apoio-hero">
+        <div class="wrap apoio-hero-inner">
           <div class="kicker kicker-green">APOIE A CAMPANHA</div>
-          <h1>UMA CAMPANHA FEITA DE MUITAS MÃOS.</h1>
-          <p>Escolha um valor e faça sua doação direto pelo Pix oficial da campanha.</p>
-          <p>O QR Code é gerado para o valor escolhido. Você também pode copiar o código Pix e pagar pelo aplicativo do seu banco.</p>
-          <img class="support-photo" src="assets/retrato.png" alt="Washington Rio Branco">
+          <h1>TODA DOAÇÃO É PÚBLICA E <span>FISCALIZADA.</span></h1>
+          <p>Cada real doado é declarado à Justiça Eleitoral e aparece na prestação de contas, com nome do doador e valor. Quem financia uma campanha fica registrado — é assim que deve ser.</p>
         </div>
-        <section class="form pix-card" aria-labelledby="pix-title" data-reveal>
-          <h2 id="pix-title">DOE VIA PIX</h2>
-          <p class="pix-owner">
-            <strong>Chave Pix:</strong> 68.504.058/0001-06<br>
-            <strong>Titular:</strong> Washington Luis Campos Rio Branco</p>
-            <div class="pix-options" aria-label="Escolha um valor para doar">
-              <button class="pix-value active" type="button" data-pix-amount="20">R$ 20</button>
-              <button class="pix-value" type="button" data-pix-amount="50">R$ 50</button>
-              <button class="pix-value" type="button" data-pix-amount="100">R$ 100</button>
+        <div class="apoio-band">
+          <div class="wrap">
+            <span>CANAL OFICIAL DO TSE</span>
+            <span>RECIBO ELEITORAL</span>
+            <span>CNPJ 68.504.058/0001-06</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="apoio-grid">
+        <div data-reveal>
+          <div class="kicker kicker-green value-picker-kicker">ESCOLHA O VALOR</div>
+          <h2>QUANTO VOCÊ PODE APOIAR?</h2>
+          <div class="value-options" data-value-picker>
+            <button class="value-option pix-value active" type="button" data-pix-amount="25" data-note="Um pacote de santinhos para uma tarde de caminhada em um bairro.">
+              R$ 25<small>MAIS COMUM</small>
+            </button>
+            <button class="value-option pix-value" type="button" data-pix-amount="50" data-note="O combustível de um dia de agenda entre bairros de São Luís.">
+              R$ 50
+            </button>
+            <button class="value-option pix-value" type="button" data-pix-amount="100" data-note="A impressão do material de divulgação de uma reunião de bairro.">
+              R$ 100
+            </button>
+            <button class="value-other" type="button" data-value-other data-note="Qualquer valor ajuda. A campanha se sustenta com doação pequena e muita gente.">
+              OUTRO<small>VALOR LIVRE</small>
+            </button>
+            <div class="value-input-wrap" data-value-input-wrap hidden>
+              <label for="pix-custom-value">VALOR EM REAIS</label>
+              <input id="pix-custom-value" type="text" inputmode="decimal" placeholder="Ex.: 35,00">
             </div>
-            <label for="pix-custom-value">OUTRO VALOR</label>
-            <input id="pix-custom-value" type="number" min="1" step="0.01" inputmode="decimal" placeholder="Ex.: 35,00">
+            <div class="value-note">
+              <div class="kicker">O QUE ESSE VALOR CUSTEIA</div>
+              <p data-value-note-text>Um pacote de santinhos para uma tarde de caminhada em um bairro.</p>
+              <small>Estimativa a confirmar com a tesouraria da campanha antes de publicar.</small>
+            </div>
+          </div>
+
+          <section class="form pix-panel pix-card" aria-labelledby="pix-title">
+            <h3 id="pix-title">DOAR VIA PIX</h3>
+            <p class="pix-owner">
+              <strong>Chave Pix:</strong> 68.504.058/0001-06<br>
+              <strong>Titular:</strong> Washington Luis Campos Rio Branco
+            </p>
             <div class="pix-qr-wrap">
-              <div id="pix-qr" aria-label="QR Code Pix">
-              </div>
+              <div id="pix-qr" aria-label="QR Code Pix"></div>
             </div>
             <button class="button pix-copy" type="button" data-copy-pix>COPIAR PIX COPIA E COLA</button>
             <button class="pix-key-copy" type="button" data-copy-pix-key>COPIAR SOMENTE A CHAVE PIX</button>
             <p class="notice">Doação direta para a campanha. Confira o nome do titular no app do seu banco antes de confirmar.</p>
-            <p class="success" aria-live="polite">
-            </p>
+            <p class="success" aria-live="polite"></p>
           </section>
-        </section>
-        <section class="quote">
-          <div class="wrap" data-reveal>
-            <div class="kicker kicker-dark">SEU APOIO CONTA</div>
-            <h2>“CADA CONTRIBUIÇÃO AJUDA A CAMPANHA A CHEGAR MAIS LONGE.”</h2>
-          </div>
-        </section>
-      </main>
-      <footer class="footer">
-        <div class="wrap">
-          <span>WASHINGTON RIO BRANCO · 4343</span>
-          <span>PV · FEDERAÇÃO BRASIL DA ESPERANÇA</span>
+
+          <!--
+            Canal oficial do TSE — pendente. O link do "Doe Aqui" só existe depois do
+            registro da candidatura no sistema da Justiça Eleitoral. Quando o link
+            existir, preencha `tseDonationUrl` em config.js e reative este bloco no
+            lugar do painel de Pix acima (ou lado a lado com ele).
+
+          <section class="form pix-panel tse-panel" aria-labelledby="tse-title">
+            <div class="kicker kicker-green">DOE AQUI · JUSTIÇA ELEITORAL</div>
+            <h3 id="tse-title">A DOAÇÃO PASSA PELO CANAL OFICIAL.</h3>
+            <p>Você será levado ao sistema da Justiça Eleitoral, faz a doação por Pix ou cartão e recebe o recibo eleitoral na hora. Este site nunca pede dados do seu cartão.</p>
+            <a class="button" data-tse-donate-link href="#">IR PARA A DOAÇÃO OFICIAL</a>
+            <p class="notice">Formulário oficial do TSE. Todos os passos são conduzidos pelo sistema — o site não coleta nem armazena seus dados.</p>
+          </section>
+          -->
         </div>
-      </footer>
-      <script src="qrcode.min.js">
-      </script>
-      <script src="config.js">
-      </script>
-      <script src="app.js">
-      </script>
-    </body>
-  </html>
+
+        <div data-reveal>
+          <div class="kicker kicker-green">ANTES DE DOAR</div>
+          <h2>QUEM NÃO PODE DOAR POR LEI.</h2>
+          <p class="apoio-legal-intro">Doação feita por quem está impedido é anulada e gera problema para o doador e para a campanha. Confira antes:</p>
+          <ul class="legal-list">
+            <li>Pessoas jurídicas — empresas não podem doar para campanha eleitoral no Brasil.</li>
+            <li>Órgãos da administração pública, direta ou indireta, e entidades que recebam recursos públicos.</li>
+            <li>Concessionárias e permissionárias de serviço público.</li>
+            <li>Entidades de classe ou sindicais, ou organizações não governamentais que recebam verba pública.</li>
+            <li>Pessoas físicas que exerçam atividade comercial decorrente de concessão ou permissão pública.</li>
+            <li>Pessoas sem CPF regular — a doação precisa ser identificada.</li>
+          </ul>
+          <div class="legal-limit">
+            <div class="kicker">LIMITE LEGAL</div>
+            <p>Pessoa física pode doar até 10% dos rendimentos brutos que declarou no ano anterior. O sistema do TSE verifica isso no momento da doação.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="apoio-alt">
+        <div class="wrap" data-reveal>
+          <div class="kicker">SE NÃO PUDER DOAR</div>
+          <h2>SEM DINHEIRO TAMBÉM SE FAZ CAMPANHA.</h2>
+          <p>A maior parte do trabalho não custa nada: é presença, conversar e boca a boca no bairro onde você já mora. Duas horas por semana valem mais que muita doação.</p>
+          <div class="apoio-alt-actions">
+            <a class="button" href="voluntarie-se.html">SER VOLUNTÁRIO</a>
+            <a class="button alt" href="propostas.html">LER AS PROPOSTAS</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="wrap footer-grid">
+        <div>
+          <h2>EM DEFESA DA VIDA<br />E DO MEIO AMBIENTE</h2>
+          <strong>4343</strong>
+        </div>
+        <div>
+          <div class="kicker">PÁGINAS</div>
+          <a href="propostas.html">Propostas</a>
+          <a href="trajetoria.html">Trajetória</a>
+          <a href="apoie.html">Apoie</a>
+          <a href="voluntarie-se.html">Voluntarie-se</a>
+        </div>
+        <div>
+          <div class="kicker">CONTATO</div>
+          <a href="https://wa.me/5598987004343">(98) 98700-4343</a>
+          <a href="https://instagram.com/riobranco4343">@riobranco4343</a>
+          <a href="mailto:riobranco4343@gmail.com">riobranco4343@gmail.com</a>
+        </div>
+      </div>
+      <div class="wrap footer-legal">
+        CNPJ 68.504.058/0001-06 · FEDERAÇÃO BRASIL DA ESPERANÇA (FE BRASIL) ·
+        Este site é mantido pela campanha. Imagens do acervo da campanha.
+      </div>
+    </footer>
+    <script src="qrcode.min.js"></script>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+    <script src="apoie.js"></script>
+  </body>
+</html>

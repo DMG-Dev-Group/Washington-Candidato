@@ -283,16 +283,43 @@ nav a:hover {
   font-size: 65px;
 }
 .footer {
-  background: #0b2e19;
-  color: #ffffffa8;
-  padding: 38px 0;
-  font-size: 12px;
+  background: #061d0e;
+  color: #fff;
+  padding: 84px 0 28px;
 }
-.footer .wrap {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 60px;
+}
+.footer-grid h2 {
+  font-size: 48px;
+}
+.footer-grid strong {
+  display: block;
+  color: var(--gold);
+  font: 800 italic 82px "Barlow Condensed";
+  margin-top: 14px;
+}
+.footer-grid .kicker {
+  margin-bottom: 18px;
+}
+.footer-grid a {
+  display: block;
+  margin: 10px 0;
+  color: #ffffffc9;
+  font-size: 14px;
+}
+.footer-grid a:hover {
+  color: var(--gold);
+}
+.footer-legal {
+  margin-top: 70px;
+  padding-top: 22px;
+  border-top: 1px solid #ffffff2b;
+  color: #ffffff8c;
+  font-size: 10px;
+  line-height: 1.6;
 }
 .page-hero {
   background: var(--green);
@@ -741,6 +768,22 @@ nav a:hover {
   }
   .cta .button {
     margin-top: 25px;
+  }
+  .footer {
+    padding: 60px 0 24px;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .footer-grid h2 {
+    font-size: 40px;
+  }
+  .footer-grid strong {
+    font-size: 68px;
+  }
+  .footer-legal {
+    margin-top: 48px;
   }
   .proposals {
     display: block;
