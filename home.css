@@ -641,7 +641,6 @@
 .home-page { background: var(--paper); }
 .home-page .wrap { width: min(1240px, 88vw); }
 
-.home-page header { position: relative; }
 .home-hero { min-height: min(84vh, 1000px); }
 .home-hero-content { min-height: min(84vh, 1000px); max-width: 1240px; padding: 92px 6vw 76px; gap: 26px; }
 .home-hero h1 { font-size: clamp(72px, 9.5vw, 136px); }
