@@ -9,7 +9,8 @@
     />
     <title>Washington Rio Branco 4343</title>
     <link rel="icon" href="assets/marca-w.jpg" type="image/png">
-    <link rel="stylesheet" href="styles.css?v=home-editorial-commitments" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="home.css" />
   </head>
   <body class="home-page">
     <header>
@@ -302,21 +303,21 @@
           </div>
         </div>
       </section>
-      <section id="depoimento" class="home-testimony">
-        <div class="wrap testimony-grid">
-          <div class="testimony-video">
-            <video
-              src="assets/depoimento-temp.mp4"
-              autoplay
-              muted
-              loop
-              playsinline
-              preload="metadata"
-              poster="assets/estudio-3.jpeg"
-            ></video>
-          </div>
-          <div class="testimony-scroll">
-            <article>
+      <section id="depoimento" class="home-testimony" data-testimony>
+        <div class="testimony-stage">
+          <video
+            class="testimony-video"
+            src="assets/depoimento-temp.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster="assets/estudio-3.jpeg"
+          ></video>
+          <div class="testimony-shade"></div>
+          <div class="testimony-content wrap">
+            <article data-testimony-card>
               <div class="kicker">EM SUAS PALAVRAS</div>
               <h2>QUATRO VEZES<br />COVID-19.</h2>
               <p>
@@ -324,7 +325,7 @@
                 horas de prazo.
               </p>
             </article>
-            <article>
+            <article data-testimony-card>
               <div class="kicker">EM SUAS PALAVRAS</div>
               <h2>DOIS CÂNCERES<br />VENCIDOS.</h2>
               <p>
@@ -332,7 +333,7 @@
                 radioterapia e quimioterapia.
               </p>
             </article>
-            <article class="testimony-final">
+            <article class="testimony-final" data-testimony-card>
               <h2>AGORA É HORA<br />DO MILAGRE<br />POLÍTICO.</h2>
               <p>Quem defende a vida como pauta já teve que defender a sua.</p>
               <div class="testimony-actions">
@@ -344,6 +345,7 @@
               </div>
             </article>
           </div>
+          <div class="testimony-progress" aria-hidden="true"><span></span><small>VÍDEO PROVISÓRIO · ENTRA A FILMAGEM EM 16:9</small></div>
         </div>
       </section>
       <section class="home-join">
@@ -387,5 +389,6 @@
         Este site é mantido pela campanha. Imagens do acervo da campanha.
       </div>
     </footer>
+    <script src="home.js"></script>
   </body>
 </html>
