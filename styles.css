@@ -547,20 +547,34 @@ nav a:hover {
   align-items: center;
 }
 .volunteer-page .join-grid {
-  width: min(1120px, 88vw);
+  width: min(1180px, 88vw);
+  gap: clamp(48px, 6vw, 88px);
+  align-items: center;
+}
+.volunteer-page .join h1 {
+  font-size: clamp(58px, 6vw, 86px);
 }
 .volunteer-page .whatsapp-card {
   background: #0b2e19;
-  border-color: #1d6b3d;
+  border: 1px solid #2a7046;
   color: #fff;
+  padding: 32px;
+}
+.volunteer-page .whatsapp-card h2 {
+  color: #fff;
+  margin-top: 10px;
+}
+.volunteer-page .whatsapp-card p {
+  color: #ffffffc7;
 }
 .volunteer-page .whatsapp-card .notice {
-  color: #ffffffb8 !important;
+  color: #ffffffa8 !important;
 }
 .whatsapp-brand {
-  width: 72px;
-  height: 72px;
-  margin-bottom: 20px;
+  width: 48px;
+  height: 48px;
+  display: block;
+  margin-bottom: 12px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -747,6 +761,15 @@ nav a:hover {
   }
   .support h1,
   .join h1 {
+    font-size: 60px;
+  }
+  .volunteer-page .join {
+    padding: 70px 0;
+  }
+  .volunteer-page .join-grid {
+    width: min(100% - 40px, 520px);
+  }
+  .volunteer-page .join h1 {
     font-size: 60px;
   }
   .page-hero {
