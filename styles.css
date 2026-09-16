@@ -410,7 +410,7 @@ nav a:hover {
   border-top: 2px solid var(--ink);
 }
 .proposal-text ul:before {
-  content: "O QUE VOU FAZER";
+  content: "O QUE VAMOS FAZER";
   display: block;
   margin-bottom: 4px;
   color: var(--green);
