@@ -300,11 +300,11 @@
 .works-list {
   grid-column: 1;
   grid-row: 2;
+  align-self: start;
   display: flex;
   flex-wrap: wrap;
   gap: 9px;
   margin: 0;
-  transform: translateY(-140px);
 }
 .works-list span {
   display: flex;
