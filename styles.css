@@ -24,6 +24,12 @@ a {
   text-decoration: none;
   color: inherit;
 }
+p,
+li,
+dd,
+small {
+  text-align: justify;
+}
 .wrap {
   width: min(1120px, 88vw);
   margin: auto;
@@ -489,14 +495,6 @@ nav a:hover {
   inset: 0;
   background: linear-gradient(0deg, rgba(4, 18, 10, 0.55), transparent 48%);
   pointer-events: none;
-}
-.proposal-photo .photo-number {
-  font: 800 italic 94px "Barlow Condensed";
-  color: #f6c51b66;
-  position: absolute;
-  z-index: 1;
-  right: 20px;
-  top: 12px;
 }
 .support {
   padding: 95px 0;
