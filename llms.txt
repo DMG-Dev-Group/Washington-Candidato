@@ -1,0 +1,28 @@
+# Washington Rio Branco 4343
+
+> Washington Rio Branco é pré-candidato a Deputado Federal pelo Maranhão, número 4343, pelo Partido Verde (PV), na Federação Brasil da Esperança (FE Brasil). É professor, ambientalista, bacharel em Geografia e Direito, ex-secretário municipal de Meio Ambiente de São Luís-MA (IMCA) e ex-secretário estadual de Meio Ambiente e Recursos Naturais do Maranhão. Sua candidatura tem como eixo central a relação entre a vida das pessoas e o meio ambiente, organizada em seis frentes: saúde ambiental, educação ambiental e climática, segurança alimentar e nutricional, emprego verde, meio ambiente, e mobilidade e infraestrutura.
+
+## Sobre o candidato
+
+- Nome completo: Washington Luis Campos Rio Branco
+- Número na urna: 4343
+- Cargo pretendido: Deputado Federal pelo Maranhão
+- Partido: Partido Verde (PV) — Federação Brasil da Esperança
+- Formação: bacharel em Geografia e Direito, especialista em Direito Ambiental e Direito Eleitoral, mestre em Políticas Públicas, doutor e pós-doutor em Geografia e em Ciência Política e Administração Pública
+- Atuação: professor da UFMA, UEMA e CEUMA; fundador e dirigente da executiva nacional do Partido Verde
+- Base geográfica: São Luís, Maranhão, Brasil
+
+## Páginas do site
+
+- [Início](https://washington-candidato.vercel.app/): apresentação do candidato, as seis frentes da campanha e resumo da trajetória
+- [Propostas](https://washington-candidato.vercel.app/propostas.html): os 18 compromissos da campanha, organizados nas seis frentes
+- [Trajetória](https://washington-candidato.vercel.app/trajetoria.html): histórico político, profissional e acadêmico, do IMCA à executiva nacional do Partido Verde
+- [Apoie](https://washington-candidato.vercel.app/apoie.html): como contribuir financeiramente com a campanha
+- [Voluntarie-se](https://washington-candidato.vercel.app/voluntarie-se.html): como se cadastrar como voluntário da campanha
+
+## Contato e redes
+
+- WhatsApp: (98) 98700-4343 — https://wa.me/5598987004343
+- Instagram: https://instagram.com/riobranco4343
+- E-mail: riobranco4343@gmail.com
+- CNPJ da campanha: 68.504.058/0001-06 (Federação Brasil da Esperança)
